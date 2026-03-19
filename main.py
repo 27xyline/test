@@ -1,22 +1,18 @@
-class GameCharacter:
-    def __init__(self, name, damage, health):
-        self.name = name
-        self.damage = damage
-        self.health = health
+class BankAccount:
+    def __init__(self, owner, balance=0):
+        self.owner = owner
+        self.balance = balance
     
-    def attack(self):
-        print(f"{self.name} наносит {self.damage} урона")
+    def deposit(self, amount):
+        self.balance += amount
+        print(f"Пополнение на {amount}.\nБаланс: {self.balance}")
     
-    def take_damage(self, amount):
-        self.health -= amount
-        if self.health < 0:
-            self.health = 0
-            print(f"Убит")
+    def withdraw(self, amount):
+        if self.balance - amount < 0:
+            print("Недостаточно средств")
             return
-        print(f"{self.name} получил {amount} урона. Осталось здоровья {self.health}")
-
-
-user1 = GameCharacter(name="Gleb", damage=17, health=80)
-user1.attack()
-user1.take_damage(23)
-user1.take_damage(12)
+        
+        self.balance -= amount
+    
+    def show_balance(self):
+        print(f"Баланс: {self.balance}")
