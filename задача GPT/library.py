@@ -9,5 +9,11 @@ class Book:
         if not self.is_available:
             raise ValueError(f"Книга {self.title} уже взята")
         self.is_available = False
-        print(f"Книга {self.title} была взята")
-            
+        return f"Книга {self.title} была взята"
+    
+    def return_book(self):
+        if self.is_available:
+            raise ValueError(f"Книга {self.title} и так доступна, ее не надо возвращать")
+        self.is_available = True
+        return f"Книга {self.title} возвращена"
+        
