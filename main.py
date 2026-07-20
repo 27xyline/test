@@ -16,3 +16,9 @@ class BankAccount:
     
     def show_balance(self):
         print(f"Баланс: {self.balance}")
+
+User1 = BankAccount(owner="Ruslan", balance=10000)
+print(User1.balance)
+
+User2 = BankAccount(owner="Vlad", balance=7000)
+print(User2.balance)
