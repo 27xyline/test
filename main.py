@@ -19,3 +19,6 @@ class BankAccount:
 
 User1 = BankAccount(owner="Ruslan", balance=10000)
 print(User1.balance)
+
+User2 = BankAccount(owner="Vlad", balance=7000)
+print(User2.balance)
