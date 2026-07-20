@@ -19,5 +19,9 @@ class BankAccount:
 
 User1 = BankAccount(owner="Ruslan", balance=10000)
 print(f"Изначальный баланс: {User1.balance}")
+
 User1.withdraw(1100)
 print(f"Баланс после снятия денег: {User1.balance}")
+
+User2 = BankAccount(owner="Vlad", balance=7000)
+print(User2.balance)
